@@ -6,7 +6,7 @@
 - [MARIANE DOS SANTOS MAGALHÃES](https://github.com/MarianeSMagalhaes)
 - [PAULO VITOR DE OLIVEIRA DOS REIS LESSA](https://github.com/PauloVitorLessa)
 - [ROBERTA MEDEIROS STUMPF](https://github.com/roberta2105)
-- [WILLIAM RAEDER RODRIGUES TINOCO]
+- [WILLIAM RAEDER RODRIGUES TINOCO](https://github.com/willtinoco97)
 - [YAGO ROMERO DE CASTRO PEDRO OLIVEIRA BONILHA]
 
 # Tecnologias utilizadas
