@@ -7,7 +7,7 @@
 - [PAULO VITOR DE OLIVEIRA DOS REIS LESSA](https://github.com/PauloVitorLessa)
 - [ROBERTA MEDEIROS STUMPF](https://github.com/roberta2105)
 - [WILLIAM RAEDER RODRIGUES TINOCO](https://github.com/willtinoco97)
-- [YAGO ROMERO DE CASTRO PEDRO OLIVEIRA BONILHA]
+- [YAGO ROMERO DE CASTRO PEDRO OLIVEIRA BONILHA](https://github.com/yagob2)
 
 # Tecnologias utilizadas
 ![](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
