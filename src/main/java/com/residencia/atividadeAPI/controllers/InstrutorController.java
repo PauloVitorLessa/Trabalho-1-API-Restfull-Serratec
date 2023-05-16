@@ -25,7 +25,7 @@ public class InstrutorController {
 	InstrutorService instrutorService;
 	
 	@GetMapping	
-	public ResponseEntity<List<Instrutor>>  getAllInstrutors(){
+	public ResponseEntity<List<Instrutor>>  getAllInstrutores(){
 		return new ResponseEntity<>(instrutorService.getAllInstrutores(),
 				HttpStatus.OK);
 	}
@@ -62,7 +62,7 @@ public class InstrutorController {
 			return new ResponseEntity<>(false,
 					HttpStatus.NOT_MODIFIED);
 		else
-			return new ResponseEntity<>(instrutorService.deleteInstrutor(id),
+			return new ResponseEntity<>(true,
 					HttpStatus.OK);		
 	}
 }

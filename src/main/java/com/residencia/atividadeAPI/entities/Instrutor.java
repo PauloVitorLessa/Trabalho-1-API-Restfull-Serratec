@@ -1,5 +1,6 @@
 package com.residencia.atividadeAPI.entities;
 
+
 import java.util.List;
 
 import jakarta.persistence.Column;

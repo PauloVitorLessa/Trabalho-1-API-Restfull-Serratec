@@ -19,37 +19,37 @@ public class Turma {
 	private Long id;
 	
 	@Column (name = "nome_disciplina")
-	private Integer rg;
+	private String nome_disciplina;
 	
 	@Column (name = "dia_semana")
-	private String nome;
+	private String dia_semana;
 	
 	@ManyToOne
 	@JoinColumn (name = "id_instrutor" , referencedColumnName = "id")
 	private Instrutor instrutor;
 
-	public Long getId() {
+	public Long getId_turma() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId_turma(Long id) {
 		this.id = id;
 	}
 
-	public Integer getRg() {
-		return rg;
+	public String getNome_disciplina() {
+		return nome_disciplina;
 	}
 
-	public void setRg(Integer rg) {
-		this.rg = rg;
+	public void setNome_disciplina(String nome_disciplina) {
+		this.nome_disciplina = nome_disciplina;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getDia_semana() {
+		return dia_semana;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setDia_semana(String dia_semana) {
+		this.dia_semana = dia_semana;
 	}
 
 	public Instrutor getInstrutor() {
@@ -59,6 +59,5 @@ public class Turma {
 	public void setInstrutor(Instrutor instrutor) {
 		this.instrutor = instrutor;
 	}
-	
 	
 }

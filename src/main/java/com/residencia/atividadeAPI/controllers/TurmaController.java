@@ -62,7 +62,7 @@ public class TurmaController {
 			return new ResponseEntity<>(false,
 					HttpStatus.NOT_MODIFIED);
 		else
-			return new ResponseEntity<>(turmaService.deleteTurma(id),
+			return new ResponseEntity<>(true,
 					HttpStatus.OK);		
 	}
 }

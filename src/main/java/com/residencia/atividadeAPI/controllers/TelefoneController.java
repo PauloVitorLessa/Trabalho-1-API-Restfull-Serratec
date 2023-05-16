@@ -62,7 +62,7 @@ public class TelefoneController {
 			return new ResponseEntity<>(false,
 					HttpStatus.NOT_MODIFIED);
 		else
-			return new ResponseEntity<>(telefoneService.deleteTelefone(id),
+			return new ResponseEntity<>(true,
 					HttpStatus.OK);		
 	}
 }
