@@ -1,5 +1,8 @@
 package com.residencia.atividadeAPI.entities;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,6 +12,10 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
+@JsonIdentityInfo(
+		generator = ObjectIdGenerators.PropertyGenerator.class,
+		property = "id"
+		)
 @Entity
 @Table (name = "turma")
 public class Turma {
@@ -28,11 +35,11 @@ public class Turma {
 	@JoinColumn (name = "id_instrutor" , referencedColumnName = "id")
 	private Instrutor instrutor;
 
-	public Long getId_turma() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId_turma(Long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -59,5 +66,7 @@ public class Turma {
 	public void setInstrutor(Instrutor instrutor) {
 		this.instrutor = instrutor;
 	}
+
+	
 	
 }

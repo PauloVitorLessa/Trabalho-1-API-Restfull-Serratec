@@ -51,8 +51,14 @@ public class TelefoneController {
 	@PutMapping
 	public ResponseEntity<Telefone> updateTelefone(@RequestBody Telefone telefone, Long id) {
 		
-		return new ResponseEntity<> (telefoneService.updateTelefone(telefone, id),
-				HttpStatus.OK);
+		if(telefoneService.getTelefoneById(telefone.getId()) != null) {
+			return new ResponseEntity<> (telefoneService.updateTelefone(telefone, id),
+					HttpStatus.OK);
+		}
+		else {
+			return new ResponseEntity<> (telefone,
+					HttpStatus.NOT_FOUND);
+		}
 	}
 	
 	@DeleteMapping ("/{id}")

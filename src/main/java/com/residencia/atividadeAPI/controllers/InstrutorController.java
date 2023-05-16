@@ -51,8 +51,14 @@ public class InstrutorController {
 	@PutMapping
 	public ResponseEntity<Instrutor> updateInstrutor(@RequestBody Instrutor instrutor, Long id) {
 		
-		return new ResponseEntity<> (instrutorService.updateInstrutor(instrutor, id),
-				HttpStatus.OK);
+		if(instrutorService.getInstrutorById(instrutor.getId()) != null) {
+			return new ResponseEntity<> (instrutorService.updateInstrutor(instrutor, id),
+					HttpStatus.OK);
+		}
+		else {
+			return new ResponseEntity<> (instrutor,
+					HttpStatus.NOT_FOUND);
+		}		
 	}
 	
 	@DeleteMapping ("/{id}")

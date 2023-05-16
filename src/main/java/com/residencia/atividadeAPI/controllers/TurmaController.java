@@ -51,8 +51,14 @@ public class TurmaController {
 	@PutMapping
 	public ResponseEntity<Turma> updateTurma(@RequestBody Turma turma, Long id) {
 		
-		return new ResponseEntity<> (turmaService.updateTurma(turma, id),
-				HttpStatus.OK);
+		if(turmaService.getTurmaById(turma.getId()) != null) {
+			return new ResponseEntity<> (turmaService.updateTurma(turma, id),
+					HttpStatus.OK);
+		}
+		else {
+			return new ResponseEntity<> (turma,
+					HttpStatus.NOT_FOUND);
+		}
 	}
 	
 	@DeleteMapping ("/{id}")
