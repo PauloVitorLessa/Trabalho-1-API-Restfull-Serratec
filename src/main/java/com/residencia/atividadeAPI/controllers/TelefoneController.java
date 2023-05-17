@@ -49,10 +49,10 @@ public class TelefoneController {
 	}
 	
 	@PutMapping
-	public ResponseEntity<Telefone> updateTelefone(@RequestBody Telefone telefone, Long id) {
+	public ResponseEntity<Telefone> updateTelefone(@RequestBody Telefone telefone) {
 		
 		if(telefoneService.getTelefoneById(telefone.getId()) != null) {
-			return new ResponseEntity<> (telefoneService.updateTelefone(telefone, id),
+			return new ResponseEntity<> (telefoneService.updateTelefone(telefone),
 					HttpStatus.OK);
 		}
 		else {

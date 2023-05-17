@@ -49,10 +49,10 @@ public class InstrutorController {
 	}
 	
 	@PutMapping
-	public ResponseEntity<Instrutor> updateInstrutor(@RequestBody Instrutor instrutor, Long id) {
+	public ResponseEntity<Instrutor> updateInstrutor(@RequestBody Instrutor instrutor) {
 		
 		if(instrutorService.getInstrutorById(instrutor.getId()) != null) {
-			return new ResponseEntity<> (instrutorService.updateInstrutor(instrutor, id),
+			return new ResponseEntity<> (instrutorService.updateInstrutor(instrutor),
 					HttpStatus.OK);
 		}
 		else {

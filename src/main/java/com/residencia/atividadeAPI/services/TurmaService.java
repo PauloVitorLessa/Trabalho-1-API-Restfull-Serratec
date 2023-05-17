@@ -29,7 +29,7 @@ public class TurmaService {
 		return turmaRepository.save(turma);
 	}
 	
-	public Turma updateTurma(Turma turma, Long id) {
+	public Turma updateTurma(Turma turma) {
 		
 		return turmaRepository.save(turma);
 	}	

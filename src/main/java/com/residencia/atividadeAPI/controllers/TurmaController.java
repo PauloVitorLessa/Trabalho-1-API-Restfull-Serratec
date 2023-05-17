@@ -49,10 +49,10 @@ public class TurmaController {
 	}
 	
 	@PutMapping
-	public ResponseEntity<Turma> updateTurma(@RequestBody Turma turma, Long id) {
+	public ResponseEntity<Turma> updateTurma(@RequestBody Turma turma) {
 		
 		if(turmaService.getTurmaById(turma.getId()) != null) {
-			return new ResponseEntity<> (turmaService.updateTurma(turma, id),
+			return new ResponseEntity<> (turmaService.updateTurma(turma),
 					HttpStatus.OK);
 		}
 		else {

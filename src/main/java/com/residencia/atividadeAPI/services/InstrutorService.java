@@ -29,7 +29,7 @@ public class InstrutorService {
 		return instrutorRepository.save(instrutor);
 	}
 	
-	public Instrutor updateInstrutor(Instrutor instrutor, Long id) {
+	public Instrutor updateInstrutor(Instrutor instrutor) {
 		
 		return instrutorRepository.save(instrutor);
 	}	

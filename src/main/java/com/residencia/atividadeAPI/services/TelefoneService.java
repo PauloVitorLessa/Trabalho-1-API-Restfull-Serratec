@@ -29,7 +29,7 @@ public class TelefoneService {
 		return telefoneRepository.save(telefone);
 	}
 	
-	public Telefone updateTelefone(Telefone telefone, Long id) {
+	public Telefone updateTelefone(Telefone telefone) {
 		
 		return telefoneRepository.save(telefone);
 	}	
