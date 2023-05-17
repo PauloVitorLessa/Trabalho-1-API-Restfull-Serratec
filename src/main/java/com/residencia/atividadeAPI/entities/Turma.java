@@ -13,8 +13,9 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @JsonIdentityInfo(
+		scope = Turma.class,
 		generator = ObjectIdGenerators.PropertyGenerator.class,
-		property = "id"
+		property = "idTurma"
 		)
 @Entity
 @Table (name = "turma")
@@ -23,7 +24,7 @@ public class Turma {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column (name = "id")
-	private Long id;
+	private Long idTurma;
 	
 	@Column (name = "nome_disciplina")
 	private String nome_disciplina;
@@ -35,12 +36,12 @@ public class Turma {
 	@JoinColumn (name = "id_instrutor" , referencedColumnName = "id")
 	private Instrutor instrutor;
 
-	public Long getId() {
-		return id;
+	public Long getIdTurma() {
+		return idTurma;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setIdTurma(Long idTurma) {
+		this.idTurma = idTurma;
 	}
 
 	public String getNome_disciplina() {
@@ -66,6 +67,8 @@ public class Turma {
 	public void setInstrutor(Instrutor instrutor) {
 		this.instrutor = instrutor;
 	}
+
+	
 
 	
 	

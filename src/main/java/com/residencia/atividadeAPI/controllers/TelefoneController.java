@@ -51,7 +51,7 @@ public class TelefoneController {
 	@PutMapping
 	public ResponseEntity<Telefone> updateTelefone(@RequestBody Telefone telefone) {
 		
-		if(telefoneService.getTelefoneById(telefone.getId()) != null) {
+		if(telefoneService.getTelefoneById(telefone.getIdTelefone()) != null) {
 			return new ResponseEntity<> (telefoneService.updateTelefone(telefone),
 					HttpStatus.OK);
 		}

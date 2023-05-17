@@ -51,7 +51,7 @@ public class InstrutorController {
 	@PutMapping
 	public ResponseEntity<Instrutor> updateInstrutor(@RequestBody Instrutor instrutor) {
 		
-		if(instrutorService.getInstrutorById(instrutor.getId()) != null) {
+		if(instrutorService.getInstrutorById(instrutor.getIdInstrutor()) != null) {
 			return new ResponseEntity<> (instrutorService.updateInstrutor(instrutor),
 					HttpStatus.OK);
 		}

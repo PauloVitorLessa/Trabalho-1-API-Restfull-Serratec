@@ -16,8 +16,9 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @JsonIdentityInfo(
+		scope = Instrutor.class,
 		generator = ObjectIdGenerators.PropertyGenerator.class,
-		property = "id"
+		property = "idInstrutor"
 		)
 @Entity
 @Table (name = "instrutor")
@@ -26,7 +27,7 @@ public class Instrutor {
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
 		@Column (name = "id")
-		private Long id;
+		private Long idInstrutor;
 		
 		@Column (name = "rg")
 		private Integer rg;
@@ -40,12 +41,12 @@ public class Instrutor {
 		@OneToMany (mappedBy = "instrutor")
 		private List<Turma> turmas;
 
-		public Long getId() {
-			return id;
+		public Long getIdInstrutor() {
+			return idInstrutor;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setIdInstrutor(Long idInstrutor) {
+			this.idInstrutor = idInstrutor;
 		}
 
 		public Integer getRg() {
@@ -79,4 +80,6 @@ public class Instrutor {
 		public void setTurmas(List<Turma> turmas) {
 			this.turmas = turmas;
 		}
+
+		
 }

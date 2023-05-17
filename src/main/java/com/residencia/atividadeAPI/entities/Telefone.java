@@ -13,8 +13,9 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @JsonIdentityInfo(
+		scope = Telefone.class,
 		generator = ObjectIdGenerators.PropertyGenerator.class,
-		property = "id"
+		property = "idTelefone"
 		)
 @Entity
 @Table (name = "telefone")
@@ -23,7 +24,7 @@ public class Telefone {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column (name = "id")
-	private Long id;
+	private Long idTelefone;
 	
 	@Column (name = "numero")
 	private Integer numero;	
@@ -32,12 +33,12 @@ public class Telefone {
 	@JoinColumn (name = "id_instrutor" , referencedColumnName = "id")
 	private Instrutor instrutor;
 
-	public Long getId() {
-		return id;
+	public Long getIdTelefone() {
+		return idTelefone;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setIdTelefone(Long idTelefone) {
+		this.idTelefone = idTelefone;
 	}
 
 	public Integer getNumero() {
@@ -55,4 +56,6 @@ public class Telefone {
 	public void setInstrutor(Instrutor instrutor) {
 		this.instrutor = instrutor;
 	}
+
+	
 }
