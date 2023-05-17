@@ -14,7 +14,7 @@ public class TelefoneService {
 	@Autowired
 	TelefoneRepository telefoneRepository;
 	
-	public List <Telefone>getAllTelefonees() {
+	public List <Telefone>getAllTelefones() {
 		
 		return telefoneRepository.findAll();
 	}
@@ -25,8 +25,18 @@ public class TelefoneService {
 	}
 	
 	public Telefone saveTelefone(Telefone telefone) {
-		
-		return telefoneRepository.save(telefone);
+		Boolean verificaInstrutor = true;
+        List<Telefone>listaTelefone = this.getAllTelefones();
+        for (Telefone tel : listaTelefone) {
+            if(tel.getInstrutor().getIdInstrutor() == telefone.getInstrutor().getIdInstrutor()) {
+                verificaInstrutor = false;
+            }
+        }
+        if(verificaInstrutor) {
+            return telefoneRepository.save(telefone);
+        }else {
+            return null;
+        }		
 	}
 	
 	public Telefone updateTelefone(Telefone telefone) {

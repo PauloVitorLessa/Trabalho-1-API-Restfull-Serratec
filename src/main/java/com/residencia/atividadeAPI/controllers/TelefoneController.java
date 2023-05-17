@@ -26,7 +26,7 @@ public class TelefoneController {
 	
 	@GetMapping	
 	public ResponseEntity<List<Telefone>>  getAllTelefones(){
-		return new ResponseEntity<>(telefoneService.getAllTelefonees(),
+		return new ResponseEntity<>(telefoneService.getAllTelefones(),
 				HttpStatus.OK);
 	}
 	
@@ -44,8 +44,15 @@ public class TelefoneController {
 	@PostMapping
 	public ResponseEntity<Telefone> saveTelefone(@RequestBody Telefone telefone) {
 		
-		return new ResponseEntity<>(telefoneService.saveTelefone(telefone),
-				HttpStatus.CREATED);
+		if(telefoneService.saveTelefone(telefone) != null) {
+			return new ResponseEntity<>(telefoneService.saveTelefone(telefone),
+					HttpStatus.CREATED);
+		}
+		else {
+			return new ResponseEntity<>(telefone,
+					HttpStatus.NOT_MODIFIED);
+		}
+		
 	}
 	
 	@PutMapping

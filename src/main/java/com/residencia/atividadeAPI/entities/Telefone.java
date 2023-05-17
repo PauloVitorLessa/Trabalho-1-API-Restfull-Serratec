@@ -30,7 +30,7 @@ public class Telefone {
 	private Integer numero;	
 	
 	@OneToOne
-	@JoinColumn (name = "id_instrutor" , referencedColumnName = "id")
+	@JoinColumn (name = "id_instrutor" , referencedColumnName = "id", unique=true)
 	private Instrutor instrutor;
 
 	public Long getIdTelefone() {
